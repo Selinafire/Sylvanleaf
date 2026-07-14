@@ -1,9 +1,12 @@
+using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using Scrapyard.Characters;
-using Scrapyard.Energy;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
+using Scrapyard.ScrapyardCode.Powers;
+using Scrapyard.Energy;
 
 namespace Scrapyard.Cards;
 
@@ -25,10 +28,9 @@ public sealed class ScrapyardRenormalize : ModCardTemplate
     {
     }
 
-    protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+    protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        ScrapyardEnergySystem.SetSpendMode(Owner, ScrapyardEnergySpendMode.Subtract);
-        return Task.CompletedTask;
+        await PowerCmd.Apply<ScrapyardRenormalizePower>(choiceContext, Owner.Creature, 1, Owner.Creature, null);
     }
 
     protected override void OnUpgrade()

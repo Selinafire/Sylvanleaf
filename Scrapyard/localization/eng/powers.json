@@ -1,0 +1,6 @@
+{
+  "SCRAPYARD_POWER_SCRAPYARD_ELECTRIC_POTENTIAL_POWER.title": "Electric Potential",
+  "SCRAPYARD_POWER_SCRAPYARD_ELECTRIC_POTENTIAL_POWER.description": "A target with a lower electric potential will take damage equal to the potential difference.",
+  "SCRAPYARD_POWER_SCRAPYARD_RENORMALIZE_POWER.title": "Renormalize",
+  "SCRAPYARD_POWER_SCRAPYARD_RENORMALIZE_POWER.description": "Your energy spend mode is changed to Subtract."
+}

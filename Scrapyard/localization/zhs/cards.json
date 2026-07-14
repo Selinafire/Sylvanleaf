@@ -1,0 +1,8 @@
+{
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.title": "模板打击",
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.description": "造成 {Damage:diff()} 点伤害。",
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.smartDescription": "造成 {Damage:diff()} 点伤害。",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.title": "模板防御",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.description": "获得 {Block:diff()} 点格挡。",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.smartDescription": "获得 {Block:diff()} 点格挡。"
+}

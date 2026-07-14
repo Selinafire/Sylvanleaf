@@ -1,0 +1,21 @@
+{
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.aromaPrinciple": "[sine][blue]A clean template is ready for a new run.[/blue][/sine]",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.banter.alive.endTurnPing": "Turn complete.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.banter.dead.endTurnPing": "I am out for now.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.cardsModifierDescription": "Template Character cards can now appear in rewards and shops.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.cardsModifierTitle": "Template Cards",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.description": "A sample character used to verify the RitsuLib template project.\nReplace this text with your own character concept after copying the template.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.eventDeathPrevention": "Template Character keeps going.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.defeatMessage": "Scrapyard falls silent.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.flavor": "A character scaffold for Scrapyard.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.goldMonologue": "This gold is enough to start testing.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.possessiveAdjective": "their",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.pronounObject": "them",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.pronounPossessive": "theirs",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.pronounSubject": "they",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.selectMessage": "Scrapyard is ready.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.title": "Template Character",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.titleObject": "Template Character",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.unlockText": "Complete a run as [pink]{Prerequisite}[/pink] to unlock this character.",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.victoryMessage": "Scrapyard survives the run."
+}

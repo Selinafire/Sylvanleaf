@@ -1,0 +1,8 @@
+{
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.title": "Template Strike",
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.description": "Deal {Damage:diff()} damage.",
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.smartDescription": "Deal {Damage:diff()} damage.",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.title": "Template Defend",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.description": "Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.smartDescription": "Gain {Block:diff()} Block."
+}

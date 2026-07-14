@@ -1,5 +1,5 @@
 {
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "模板遗物",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "每回合开始时，抽 [blue]{Cards}[/blue] 张牌。",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "一个用于验证模板工程的示例遗物。"
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "废场核心",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "Scrapyard 每回合以 [blue]12[/blue] 点能量开始。它的卡牌通常在打出时按费用整除能量。",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "一枚为奇怪算术调校过的压力核心。"
 }

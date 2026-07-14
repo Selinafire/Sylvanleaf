@@ -3,7 +3,7 @@
   "name": "Scrapyard",
   "pck_name": "Scrapyard",
   "author": "Author",
-  "description": "A starter Slay the Spire 2 mod template built on RitsuLib.",
+  "description": "Adds Scrapyard, a character with a divisive 12-Energy cost system.",
   "version": "0.0.0",
   "has_pck": true,
   "has_dll": true,

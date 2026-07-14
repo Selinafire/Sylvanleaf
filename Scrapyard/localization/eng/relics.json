@@ -1,5 +1,5 @@
 {
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "Template Relic",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "At the start of each turn, draw [blue]{Cards}[/blue] card.",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "A sample relic used to verify the template project."
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "Scrapyard Core",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "Scrapyard starts each turn with [blue]12[/blue] Energy. Its cards normally divide Energy when played.",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "A pressure core tuned for strange arithmetic."
 }

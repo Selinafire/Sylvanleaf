@@ -1,8 +1,20 @@
 {
-  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.title": "Template Strike",
+  "SCRAPYARD_CARD_SCRAPYARD_STRIKE.title": "Strike",
   "SCRAPYARD_CARD_SCRAPYARD_STRIKE.description": "Deal {Damage:diff()} damage.",
   "SCRAPYARD_CARD_SCRAPYARD_STRIKE.smartDescription": "Deal {Damage:diff()} damage.",
-  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.title": "Template Defend",
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.title": "Defend",
   "SCRAPYARD_CARD_SCRAPYARD_DEFEND.description": "Gain {Block:diff()} Block.",
-  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.smartDescription": "Gain {Block:diff()} Block."
+  "SCRAPYARD_CARD_SCRAPYARD_DEFEND.smartDescription": "Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_HEAVY_DEFEND.title": "Defend",
+  "SCRAPYARD_CARD_SCRAPYARD_HEAVY_DEFEND.description": "Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_HEAVY_DEFEND.smartDescription": "Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_GATHER_FORM.title": "Gather Form",
+  "SCRAPYARD_CARD_SCRAPYARD_GATHER_FORM.description": "Gain 2 Energy. Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_GATHER_FORM.smartDescription": "Gain 2 Energy. Gain {Block:diff()} Block.",
+  "SCRAPYARD_CARD_SCRAPYARD_IGNITE.title": "Ignite",
+  "SCRAPYARD_CARD_SCRAPYARD_IGNITE.description": "Deal {Damage:diff()} damage 2 times. Initiative: Draw {Cards:diff()} cards.",
+  "SCRAPYARD_CARD_SCRAPYARD_IGNITE.smartDescription": "Deal {Damage:diff()} damage 2 times. Initiative: Draw {Cards:diff()} cards.",
+  "SCRAPYARD_CARD_SCRAPYARD_RENORMALIZE.title": "Renormalize",
+  "SCRAPYARD_CARD_SCRAPYARD_RENORMALIZE.description": "This turn, reset your Energy spending mode.",
+  "SCRAPYARD_CARD_SCRAPYARD_RENORMALIZE.smartDescription": "This turn, reset your Energy spending mode."
 }

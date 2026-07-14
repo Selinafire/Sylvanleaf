@@ -16,7 +16,7 @@ namespace Scrapyard.Cards;
 public sealed class ScrapyardStrike : ModCardTemplate
 {
     // 基础耗能。
-    private const int BaseEnergyCost = 1;
+    private const int BaseEnergyCost = 2;
     // 卡牌类型。
     private const CardType CardKind = CardType.Attack;
     // 卡牌稀有度。

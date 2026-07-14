@@ -1,6 +1,8 @@
 using Godot;
 using MegaCrit.Sts2.Core.Entities.Characters;
+using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Nodes.Combat;
+using Scrapyard.Energy;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Characters;
 using STS2RitsuLib.Scaffolding.Godot;
@@ -33,6 +35,7 @@ public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool,
     // 初始血量和金币。
     public override int StartingHp => 75;
     public override int StartingGold => 99;
+    public override int MaxEnergy => ScrapyardEnergySystem.StartingEnergy;
 
     // CharacterAssetProfile 按类别拆分。你只写需要替换的部分，其他字段会保留回退。
     // AssetProfile 只指定模板自带的静态占位资源；没有复制的音频、拖尾、转场等资源继续从占位角色回退。
@@ -67,6 +70,12 @@ public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool,
     // 攻击和施法动画延迟，以对齐动画。静态占位资源不需要延迟。
     public override float AttackAnimDelay => 0f;
     public override float CastAnimDelay => 0f;
+
+    public override async Task AfterEnergyResetLate(Player player)
+    {
+        await base.AfterEnergyResetLate(player);
+        ScrapyardEnergySystem.ResetSpendMode(player);
+    }
 
     // 让 RitsuLib 把普通 Godot 场景转换成游戏需要的 NCreatureVisuals。
     // 自动转换人物场景，让你不需要手动挂脚本。复制即可。

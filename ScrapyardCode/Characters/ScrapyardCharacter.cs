@@ -9,6 +9,8 @@ using STS2RitsuLib.Scaffolding.Godot;
 
 namespace Scrapyard.Characters;
 
+#pragma warning disable RITSU013 // Defect scene paths are base-game resources loaded at runtime, outside this mod's resource index.
+
 [RegisterCharacter]
 public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool, ScrapyardRelicPool, ScrapyardPotionPool>
 {
@@ -97,3 +99,5 @@ public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool,
         ];
     }
 }
+
+#pragma warning restore RITSU013

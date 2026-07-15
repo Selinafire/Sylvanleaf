@@ -21,10 +21,9 @@ public class ScrapyardRenormalizePower: ModPowerTemplate
     // 叠加类型，Counter表示可叠加，Single表示不可叠加
     public override PowerStackType StackType => PowerStackType.Single;
 
-    // 自定义图标路径。1:1即可。原版游戏大图256x256，小图64x64。
     public override PowerAssetProfile AssetProfile => new(
-        IconPath: "res://Test/images/powers/test_power.png",
-        BigIconPath: "res://Test/images/powers/test_power.png"
+        IconPath: $"{Entry.ResPath}/images/powers/ScrapyardRenormalizePower.png",
+        BigIconPath: $"{Entry.ResPath}/images/powers/ScrapyardRenormalizePowerBig.png"
     );
 
     public override Task AfterApplied(Creature? creature, CardModel? card)

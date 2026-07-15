@@ -6,8 +6,10 @@ namespace Scrapyard.Characters;
 
 public sealed class ScrapyardCardPool : TypeListCardPoolModel
 {
+#pragma warning disable CS0618 // Keep current frame tint helper; replacement signature varies by RitsuLib package version.
     private static readonly Material? PoolFrameTintMaterial =
         MaterialUtils.CreateRgbShaderMaterial(0.42f, 0.65f, 0.72f);
+#pragma warning restore CS0618
 
     // Title 和 EnergyColorName 是池子的稳定标识，不是玩家看到的角色名。
     // 自定义角色卡、遗物、药水池保持同一个 EnergyColorName，方便实验室和文本统一读取能量图标。

@@ -14,13 +14,12 @@ public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool,
 {
     public static readonly Color ThemeColor = new(0.42f, 0.65f, 0.72f);
 
-    private const string SceneRoot = $"{Entry.ResPath}/scenes/characters";
     private const string ImageRoot = $"{Entry.ResPath}/images/characters";
-    private const string CharacterScenePath = $"{SceneRoot}/Scrapyard_character.tscn";
-    private const string EnergyCounterScenePath = $"{SceneRoot}/Scrapyard_energy_counter.tscn";
-    private const string MerchantScenePath = $"{SceneRoot}/Scrapyard_merchant.tscn";
-    private const string RestSiteScenePath = $"{SceneRoot}/Scrapyard_rest_site.tscn";
-    private const string CharacterSelectBgScenePath = $"{SceneRoot}/Scrapyard_character_select_bg.tscn";
+    private const string CharacterScenePath = "res://scenes/creature_visuals/defect.tscn";
+    private const string EnergyCounterScenePath = $"{Entry.ResPath}/scenes/characters/Scrapyard_energy_counter.tscn";
+    private const string MerchantScenePath = "res://scenes/merchant/characters/defect_merchant.tscn";
+    private const string RestSiteScenePath = "res://scenes/rest_site/characters/defect_rest_site.tscn";
+    private const string CharacterSelectBgScenePath = "res://scenes/screens/char_select/char_select_bg_defect.tscn";
 
     // 角色名称颜色。
     public override Color NameColor => ThemeColor;
@@ -64,7 +63,7 @@ public sealed class ScrapyardCharacter : ModCharacterTemplate<ScrapyardCardPool,
             MapMarkerPath: $"{ImageRoot}/Scrapyard_map_marker.png"));
 
     // 某个字段没写时，RitsuLib 会从占位角色配置里补齐。
-    public override string? PlaceholderCharacterId => "ironclad";
+    public override string? PlaceholderCharacterId => "defect";
     // 如果你的人物不需要时间线小故事，加上这句。
     public override bool RequiresEpochAndTimeline => false;
     // 攻击和施法动画延迟，以对齐动画。静态占位资源不需要延迟。

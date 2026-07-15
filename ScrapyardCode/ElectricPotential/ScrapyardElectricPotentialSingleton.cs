@@ -36,13 +36,11 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
         if (!target.IsAlive) return;
 
         var power = target.GetPower<ScrapyardElectricPotentialPower>();
-        int currentAmount = power?.Amount ?? 0;
-        int newAmount = currentAmount - 1;
+        if (power == null) return;
 
-        if (power != null)
-        {
-            await PowerCmd.Remove(power);
-        }
+        int newAmount = power.Amount - 1;
+
+        await PowerCmd.Remove(power);
 
         await PowerCmd.Apply<ScrapyardElectricPotentialPower>(
             choiceContext,
@@ -91,7 +89,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
                     new[] { player },
                     enemyAmount - playerAmount,
                     ValueProp.Unpowered,
-                    enemy,
+                    null,
                     null,
                     null
                 );

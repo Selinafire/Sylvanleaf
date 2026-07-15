@@ -11,7 +11,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 128.0
 offset_bottom = 128.0
-metadata/_edit_lock_ = true
+metadata/*edit_lock* = true
 
 [node name="EnergyVfxBack" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -52,6 +52,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(64, 64)
 texture = ExtResource("2_layer2")
 expand_mode = 1
 
@@ -62,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(64, 64)
 texture = ExtResource("3_layer3")
 expand_mode = 1
 

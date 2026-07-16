@@ -38,6 +38,7 @@ public sealed class ScrapyardIgnite : ScrapyardCard, IScrapyardInitiativeCard
         }
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .WithHitCount(2)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);

@@ -9,6 +9,7 @@ public static class ScrapyardKeywordState
     private static readonly Dictionary<Player, int> CardsPlayedThisTurn = new();
     private static readonly Dictionary<Player, int> TrackedTurnNumbers = new();
     private static readonly Dictionary<Player, int> PreviousCardCosts = new();
+    private static readonly Dictionary<Player, List<int>> PlayedCardCosts = new();
     private static readonly Dictionary<CardModel, bool> WasInitiativeCard = new();
     private static readonly Dictionary<CardModel, bool> WasFollowUpCard = new();
     private static readonly Dictionary<CardModel, bool> WasDecisiveCard = new();
@@ -17,6 +18,7 @@ public static class ScrapyardKeywordState
     {
         TrackedTurnNumbers[player] = player.PlayerCombatState?.TurnNumber ?? 0;
         CardsPlayedThisTurn[player] = 0;
+        PlayedCardCosts[player] = [];
         PreviousCardCosts.Remove(player);
         WasInitiativeCard.Clear();
         WasFollowUpCard.Clear();
@@ -42,7 +44,14 @@ public static class ScrapyardKeywordState
         WasFollowUpCard[card] = IsFollowUpPending(card);
         WasDecisiveCard[card] = card is IScrapyardDecisiveCard && finalEnergy == 1;
         CardsPlayedThisTurn[player] = CardsPlayedThisTurn.GetValueOrDefault(player) + 1;
+        PlayedCardCosts.GetValueOrDefault(player)?.Add(cost);
         PreviousCardCosts[player] = cost;
+    }
+
+    public static IReadOnlyList<int> GetPlayedCardCostsThisTurn(Player player)
+    {
+        RefreshTurnState(player);
+        return PlayedCardCosts.GetValueOrDefault(player) ?? [];
     }
 
     public static bool WasInitiativeTriggered(CardModel card)

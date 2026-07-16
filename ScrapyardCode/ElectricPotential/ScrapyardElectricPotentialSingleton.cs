@@ -95,5 +95,42 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
                 );
             }
         }
+
+        if (player.GetPower<ScrapyardMutualInductionPower>() is null)
+        {
+            return;
+        }
+
+        for (var i = 0; i < enemies.Count; i++)
+        {
+            for (var j = i + 1; j < enemies.Count; j++)
+            {
+                await DamageLowerPotentialEnemy(enemies[i], enemies[j]);
+            }
+        }
+    }
+
+    private static async Task DamageLowerPotentialEnemy(Creature first, Creature second)
+    {
+        int firstAmount = first.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
+        int secondAmount = second.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
+
+        if (firstAmount == secondAmount)
+        {
+            return;
+        }
+
+        var target = firstAmount < secondAmount ? first : second;
+        var damage = Math.Abs(firstAmount - secondAmount);
+
+        await CreatureCmd.Damage(
+            new ThrowingPlayerChoiceContext(),
+            new[] { target },
+            damage,
+            ValueProp.Unpowered,
+            null,
+            null,
+            null
+        );
     }
 }

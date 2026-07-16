@@ -82,6 +82,11 @@ public static class ScrapyardEnergySystem
     {
         RefreshTurnState(player);
 
+        if (card.EnergyCost.CostsX)
+        {
+            return player.PlayerCombatState?.Energy >= 0;
+        }
+
         return CanSpend(player, cost);
     }
 
@@ -113,6 +118,11 @@ public static class ScrapyardEnergySystem
     {
         RefreshTurnState(player);
 
+        if (card.EnergyCost.CostsX)
+        {
+            return 0;
+        }
+
         return PreviewEnergyAfterSpend(player, cost);
     }
 
@@ -128,6 +138,11 @@ public static class ScrapyardEnergySystem
 
         var before = combatState.Energy;
         var after = PreviewEnergyAfterSpend(player, card, cost);
+        if (card.EnergyCost.CostsX)
+        {
+            card.EnergyCost.CapturedXValue = Math.Max(0, before);
+        }
+
         ScrapyardKeywordState.RecordPlayedCard(player, card, cost, after);
         combatState.Energy = after;
         return Math.Max(0, before - after);

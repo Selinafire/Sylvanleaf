@@ -58,11 +58,6 @@ public static class ScrapyardEnergySystem
     {
         RefreshTurnState(player);
 
-        if (cost == 0)
-        {
-            return false;
-        }
-
         var combatState = player.PlayerCombatState;
         if (combatState is null)
         {
@@ -72,8 +67,8 @@ public static class ScrapyardEnergySystem
         var energy = combatState.Energy;
         return GetSpendMode(player) switch
         {
-            ScrapyardEnergySpendMode.Divide => energy % cost == 0,
-            ScrapyardEnergySpendMode.Subtract => cost > 0 && energy >= cost,
+            ScrapyardEnergySpendMode.Divide => cost != 0 && energy % cost == 0,
+            ScrapyardEnergySpendMode.Subtract => cost >= 0 && energy >= cost,
             _ => false
         };
     }

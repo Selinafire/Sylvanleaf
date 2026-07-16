@@ -37,5 +37,11 @@
   "SCRAPYARD_CARD_SCRAPYARD_LEAP.smartDescription": "Gain {Block:diff()} Block.",
   "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.title": "Short Circuit",
   "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.description": "Initiative: Deal {Damage:diff()} damage 2 times.",
-  "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.smartDescription": "Initiative: Deal {Damage:diff()} damage 2 times."
+  "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.smartDescription": "Initiative: Deal {Damage:diff()} damage 2 times.",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.title": "Energy Surge",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.description": "Multiply your Energy by {IfUpgraded:show:12|6}.",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.smartDescription": "Multiply your Energy by {IfUpgraded:show:12|6}.",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.title": "Battle Trance",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.description": "Draw {Cards:diff()} cards. You cannot draw any more cards this turn. Invert your Energy.",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.smartDescription": "Draw {Cards:diff()} cards. You cannot draw any more cards this turn. Invert your Energy."
 }

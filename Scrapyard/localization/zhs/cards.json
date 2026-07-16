@@ -37,5 +37,11 @@
   "SCRAPYARD_CARD_SCRAPYARD_LEAP.smartDescription": "获得 {Block:diff()} 点格挡。",
   "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.title": "短路",
   "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.description": "先制：造成 {Damage:diff()} 点伤害 2 次。",
-  "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.smartDescription": "先制：造成 {Damage:diff()} 点伤害 2 次。"
+  "SCRAPYARD_CARD_SCRAPYARD_SHORT_CIRCUIT.smartDescription": "先制：造成 {Damage:diff()} 点伤害 2 次。",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.title": "能量涌动",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.description": "将你的能量翻{IfUpgraded:show:12|6}倍。",
+  "SCRAPYARD_CARD_SCRAPYARD_ENERGY_SURGE.smartDescription": "将你的能量翻{IfUpgraded:show:12|6}倍。",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.title": "专注战斗",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.description": "抽 {Cards:diff()} 张牌。你在本回合内不能再抽牌。将你的能量变为相反数。",
+  "SCRAPYARD_CARD_SCRAPYARD_TRANCE_BATTLE.smartDescription": "抽 {Cards:diff()} 张牌。你在本回合内不能再抽牌。将你的能量变为相反数。"
 }

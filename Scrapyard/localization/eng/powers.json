@@ -11,5 +11,7 @@
   "SCRAPYARD_POWER_SCRAPYARD_MONOTONE_FORM_POWER.smartDescription": "If card costs played this turn remain strictly increasing or strictly decreasing, playing a card multiplies your Energy by its cost.",
   "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.title": "Mutual Induction",
   "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.description": "Electric Potential differences between enemies also deal damage.",
-  "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.smartDescription": "Electric Potential differences between enemies also deal damage."
+  "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.smartDescription": "Electric Potential differences between enemies also deal damage.",
+  "SCRAPYARD_POWER_SCRAPYARD_TRANSMUTATION_POWER.title": "Transmutation",
+  "SCRAPYARD_POWER_SCRAPYARD_TRANSMUTATION_POWER.description": "Your maximum Energy is 36."
 }

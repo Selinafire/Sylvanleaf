@@ -1,8 +1,6 @@
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 using Scrapyard.Energy;
 using Scrapyard.Keywords;
@@ -14,24 +12,12 @@ namespace Scrapyard.ScrapyardCode.Powers;
 [RegisterPower]
 public class ScrapyardMonotoneFormPower : ModPowerTemplate
 {
-    private int _startCostIndex;
-
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Single;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: $"{Entry.ResPath}/images/powers/ScrapyardMonotoneFormPower.png",
         BigIconPath: $"{Entry.ResPath}/images/powers/ScrapyardMonotoneFormPowerBig.png");
-
-    public override Task AfterApplied(Creature? creature, CardModel? card)
-    {
-        if (Owner.Player is { } player)
-        {
-            _startCostIndex = ScrapyardKeywordState.GetPlayedCardCostsThisTurn(player).Count;
-        }
-
-        return Task.CompletedTask;
-    }
 
     public override Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -40,9 +26,7 @@ public class ScrapyardMonotoneFormPower : ModPowerTemplate
             return Task.CompletedTask;
         }
 
-        var costs = ScrapyardKeywordState.GetPlayedCardCostsThisTurn(cardPlay.Card.Owner)
-            .Skip(_startCostIndex)
-            .ToList();
+        var costs = ScrapyardKeywordState.GetPlayedCardCostsThisTurn(cardPlay.Card.Owner);
         if (costs.Count == 0 || !IsStrictlyMonotone(costs))
         {
             return Task.CompletedTask;

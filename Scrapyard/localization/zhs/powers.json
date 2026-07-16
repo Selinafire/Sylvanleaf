@@ -11,5 +11,7 @@
   "SCRAPYARD_POWER_SCRAPYARD_MONOTONE_FORM_POWER.smartDescription": "若本回合打出的牌费用保持严格递增或严格递减，每打出一张牌，将你的能量乘以该牌的费用。",
   "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.title": "互感",
   "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.description": "敌人之间的电势差也会造成伤害。",
-  "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.smartDescription": "敌人之间的电势差也会造成伤害。"
+  "SCRAPYARD_POWER_SCRAPYARD_MUTUAL_INDUCTION_POWER.smartDescription": "敌人之间的电势差也会造成伤害。",
+  "SCRAPYARD_POWER_SCRAPYARD_TRANSMUTATION_POWER.title": "嬗变",
+  "SCRAPYARD_POWER_SCRAPYARD_TRANSMUTATION_POWER.description": "你的能量上限为 36 。"
 }

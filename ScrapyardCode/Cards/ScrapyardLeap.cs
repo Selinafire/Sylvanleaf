@@ -5,30 +5,20 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 using Scrapyard.Characters;
 using STS2RitsuLib.Interop.AutoRegistration;
-using STS2RitsuLib.Scaffolding.Content;
 
 namespace Scrapyard.Cards;
 
 [RegisterCard(typeof(ScrapyardCardPool))]
-[RegisterCharacterStarterCard(typeof(ScrapyardCharacter), 1)]
-public sealed class ScrapyardHeavyDefend : ScrapyardCard
+public sealed class ScrapyardLeap : ScrapyardCard
 {
-    private const int BaseEnergyCost = 3;
-    private const CardType CardKind = CardType.Skill;
-    private const CardRarity CardRarityValue = CardRarity.Basic;
-    private const TargetType CardTarget = TargetType.Self;
-    private const bool ShowInCardLibrary = true;
+    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    [
+        new BlockVar(9m, ValueProp.Move)
+    ];
 
     public override bool GainsBlock => true;
 
-    protected override HashSet<CardTag> CanonicalTags => new() { CardTag.Defend };
-
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
-    [
-        new BlockVar(7m, ValueProp.Move)
-    ];
-
-    public ScrapyardHeavyDefend() : base(BaseEnergyCost, CardKind, CardRarityValue, CardTarget, ShowInCardLibrary)
+    public ScrapyardLeap() : base(-3, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 

@@ -29,8 +29,8 @@ public static class ScrapyardEnergyPatches
                 return;
             }
 
-            var cost = __instance.EnergyCost.GetAmountToSpend();
-            var canSpend = ScrapyardEnergySystem.CanSpend(__instance.Owner, cost);
+            var cost = ScrapyardEnergySystem.GetEnergyCostToSpend(__instance);
+            var canSpend = ScrapyardEnergySystem.CanSpend(__instance.Owner, __instance, cost);
 
             if (__result)
             {
@@ -68,7 +68,7 @@ public static class ScrapyardEnergyPatches
                 return true;
             }
 
-            var cost = __instance.EnergyCost.GetAmountToSpend();
+            var cost = ScrapyardEnergySystem.GetEnergyCostToSpend(__instance);
             var spent = ScrapyardEnergySystem.Spend(__instance.Owner, __instance, cost);
 
             __result = Task.FromResult((spent, 0));

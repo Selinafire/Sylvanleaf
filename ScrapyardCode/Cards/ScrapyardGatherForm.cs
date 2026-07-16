@@ -12,7 +12,7 @@ namespace Scrapyard.Cards;
 
 [RegisterCard(typeof(ScrapyardCardPool))]
 [RegisterCharacterStarterCard(typeof(ScrapyardCharacter), 1)]
-public sealed class ScrapyardGatherForm : ModCardTemplate
+public sealed class ScrapyardGatherForm : ScrapyardCard
 {
     private const int BaseEnergyCost = 6;
     private const CardType CardKind = CardType.Skill;
@@ -21,9 +21,6 @@ public sealed class ScrapyardGatherForm : ModCardTemplate
     private const bool ShowInCardLibrary = true;
 
     public override bool GainsBlock => true;
-
-    public override CardAssetProfile AssetProfile => new(
-        PortraitPath: $"{Entry.ResPath}/images/cards/ScrapyardDefend.png");
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [

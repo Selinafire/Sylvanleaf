@@ -1,6 +1,9 @@
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
+using Scrapyard.Cards;
 using Scrapyard.Characters;
+using Scrapyard.Keywords;
 
 namespace Scrapyard.Energy;
 
@@ -9,13 +12,30 @@ public static class ScrapyardEnergySystem
     public const int StartingEnergy = 12;
 
     private static readonly Dictionary<Player, ScrapyardEnergySpendMode> SpendModes = new();
-    private static readonly Dictionary<Player, int> CardsPlayedThisTurn = new();
-    private static readonly Dictionary<Player, int> TrackedTurnNumbers = new();
-    private static readonly Dictionary<CardModel, bool> WasFirstCardThisTurn = new();
 
     public static bool IsScrapyardCard(CardModel card)
     {
-        return card.Owner?.Character is ScrapyardCharacter;
+        if (card is ScrapyardCard)
+        {
+            return true;
+        }
+
+        return !card.IsCanonical && card.Owner?.Character is ScrapyardCharacter;
+    }
+
+    public static int GetEnergyCostToSpend(CardModel card)
+    {
+        if (card.EnergyCost.CostsX)
+        {
+            if (card.IsCanonical)
+            {
+                return 0;
+            }
+
+            return card.Owner?.PlayerCombatState?.Energy ?? 0;
+        }
+
+        return card.EnergyCost.GetWithModifiers(CostModifiers.All);
     }
 
     public static ScrapyardEnergySpendMode GetSpendMode(Player player)
@@ -31,8 +51,7 @@ public static class ScrapyardEnergySystem
     public static void ResetSpendMode(Player player)
     {
         SpendModes[player] = ScrapyardEnergySpendMode.Divide;
-        CardsPlayedThisTurn[player] = 0;
-        TrackedTurnNumbers[player] = player.PlayerCombatState?.TurnNumber ?? 0;
+        ScrapyardKeywordState.ResetTurn(player);
     }
 
     public static bool CanSpend(Player player, int cost)
@@ -59,6 +78,13 @@ public static class ScrapyardEnergySystem
         };
     }
 
+    public static bool CanSpend(Player player, CardModel card, int cost)
+    {
+        RefreshTurnState(player);
+
+        return CanSpend(player, cost);
+    }
+
     public static int PreviewEnergyAfterSpend(Player player, int cost)
     {
         RefreshTurnState(player);
@@ -83,6 +109,13 @@ public static class ScrapyardEnergySystem
         };
     }
 
+    public static int PreviewEnergyAfterSpend(Player player, CardModel card, int cost)
+    {
+        RefreshTurnState(player);
+
+        return PreviewEnergyAfterSpend(player, cost);
+    }
+
     public static int Spend(Player player, CardModel card, int cost)
     {
         RefreshTurnState(player);
@@ -94,39 +127,10 @@ public static class ScrapyardEnergySystem
         }
 
         var before = combatState.Energy;
-        var after = PreviewEnergyAfterSpend(player, cost);
-        WasFirstCardThisTurn[card] = CardsPlayedThisTurn.GetValueOrDefault(player) == 0;
-        CardsPlayedThisTurn[player] = CardsPlayedThisTurn.GetValueOrDefault(player) + 1;
+        var after = PreviewEnergyAfterSpend(player, card, cost);
+        ScrapyardKeywordState.RecordPlayedCard(player, card, cost, after);
         combatState.Energy = after;
         return Math.Max(0, before - after);
-    }
-
-    public static bool WasFirstPlayedCardThisTurn(CardModel card)
-    {
-        if (card.Owner is not null)
-        {
-            RefreshTurnState(card.Owner);
-        }
-
-        if (WasFirstCardThisTurn.TryGetValue(card, out var wasFirst))
-        {
-            return wasFirst;
-        }
-
-        var owner = card.Owner;
-        return owner is not null && CardsPlayedThisTurn.GetValueOrDefault(owner) == 0;
-    }
-
-    public static bool IsFirstCardPendingThisTurn(CardModel card)
-    {
-        var owner = card.Owner;
-        if (owner is null)
-        {
-            return false;
-        }
-
-        RefreshTurnState(owner);
-        return CardsPlayedThisTurn.GetValueOrDefault(owner) == 0;
     }
 
     public static void GainAdditive(Player player, int amount)
@@ -153,14 +157,6 @@ public static class ScrapyardEnergySystem
 
     private static void RefreshTurnState(Player player)
     {
-        var turnNumber = player.PlayerCombatState?.TurnNumber ?? 0;
-        if (TrackedTurnNumbers.TryGetValue(player, out var trackedTurnNumber) && trackedTurnNumber == turnNumber)
-        {
-            return;
-        }
-
-        TrackedTurnNumbers[player] = turnNumber;
-        CardsPlayedThisTurn[player] = 0;
-        WasFirstCardThisTurn.Clear();
+        ScrapyardKeywordState.RefreshTurnState(player);
     }
 }

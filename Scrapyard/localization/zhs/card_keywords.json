@@ -1,4 +1,8 @@
 {
   "SCRAPYARD_KEYWORD_INITIATIVE.title": "先制",
-  "SCRAPYARD_KEYWORD_INITIATIVE.description": "每回合第一张打出时，触发先制效果。"
+  "SCRAPYARD_KEYWORD_INITIATIVE.description": "每回合第一张打出时，触发先制效果。",
+  "SCRAPYARD_KEYWORD_FOLLOW_UP.title": "跟进",
+  "SCRAPYARD_KEYWORD_FOLLOW_UP.description": "如果这张牌和上一张打出的牌费用互为倍数，触发跟进效果。",
+  "SCRAPYARD_KEYWORD_DECISIVE.title": "决胜",
+  "SCRAPYARD_KEYWORD_DECISIVE.description": "你的费用为 1 时，可以打出这张牌，并触发决胜效果。"
 }

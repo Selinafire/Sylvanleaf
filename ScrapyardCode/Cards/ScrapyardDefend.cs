@@ -12,7 +12,7 @@ namespace Scrapyard.Cards;
 // 防御牌和打击一样注册到角色卡池，并作为 4 张初始卡加入角色卡组。
 [RegisterCard(typeof(ScrapyardCardPool))]
 [RegisterCharacterStarterCard(typeof(ScrapyardCharacter), 3)]
-public sealed class ScrapyardDefend : ModCardTemplate
+public sealed class ScrapyardDefend : ScrapyardCard
 {
     // 基础耗能。
     private const int BaseEnergyCost = 2;
@@ -29,9 +29,6 @@ public sealed class ScrapyardDefend : ModCardTemplate
 
     // 卡图资源。
     // 如果你按这行代码写，文件名就对应 Scrapyard/images/cards/ScrapyardDefend.png。
-    public override CardAssetProfile AssetProfile => new(
-        PortraitPath: $"{Entry.ResPath}/images/cards/{GetType().Name}.png");
-
     protected override HashSet<CardTag> CanonicalTags => new() { CardTag.Defend };
 
     // 卡牌基础数值。

@@ -13,7 +13,7 @@ namespace Scrapyard.Cards;
 // RegisterCharacterStarterCard 会把它追加进 ScrapyardCharacter 的初始卡组。
 [RegisterCard(typeof(ScrapyardCardPool))]
 [RegisterCharacterStarterCard(typeof(ScrapyardCharacter), 4)]
-public sealed class ScrapyardStrike : ModCardTemplate
+public sealed class ScrapyardStrike : ScrapyardCard
 {
     // 基础耗能。
     private const int BaseEnergyCost = 2;
@@ -29,9 +29,6 @@ public sealed class ScrapyardStrike : ModCardTemplate
     // 卡图资源。
     // 如果你按这行代码写，文件名就对应 Scrapyard/images/cards/ScrapyardStrike.png。
     // 这里的 res://Scrapyard/... 是 Godot 资源路径，对应的是你的资源文件夹名字。
-    public override CardAssetProfile AssetProfile => new(
-        PortraitPath: $"{Entry.ResPath}/images/cards/{GetType().Name}.png");
-
     // CanonicalVars 翻译是“规范值”，指卡牌的基础数值。
     // 添加一个 DamageVar 意为指定卡牌的基础伤害是多少；它会自动绑定到本地化里的 {Damage:diff()} 占位符。
     protected override IEnumerable<DynamicVar> CanonicalVars =>

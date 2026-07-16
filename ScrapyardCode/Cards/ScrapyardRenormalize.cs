@@ -11,16 +11,13 @@ using Scrapyard.Energy;
 namespace Scrapyard.Cards;
 
 [RegisterCard(typeof(ScrapyardCardPool))]
-public sealed class ScrapyardRenormalize : ModCardTemplate
+public sealed class ScrapyardRenormalize : ScrapyardCard
 {
     private const int BaseEnergyCost = 2;
     private const CardType CardKind = CardType.Skill;
     private const CardRarity CardRarityValue = CardRarity.Common;
     private const TargetType CardTarget = TargetType.Self;
     private const bool ShowInCardLibrary = true;
-
-    public override CardAssetProfile AssetProfile => new(
-        PortraitPath: $"{Entry.ResPath}/images/cards/ScrapyardDefend.png");
 
     public override IEnumerable<CardKeyword> CanonicalKeywords => [CardKeyword.Exhaust];
 

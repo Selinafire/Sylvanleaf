@@ -10,21 +10,14 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace Scrapyard.Cards;
 
 [RegisterCard(typeof(ScrapyardCardPool))]
-[RegisterCharacterStarterCard(typeof(ScrapyardCharacter), 1)]
-public sealed class ScrapyardIgnite : ScrapyardCard, IScrapyardInitiativeCard
+public sealed class ScrapyardShortCircuit : ScrapyardCard, IScrapyardInitiativeCard
 {
-    private const int BaseEnergyCost = 4;
-    private const CardType CardKind = CardType.Attack;
-    private const CardRarity CardRarityValue = CardRarity.Basic;
-    private const TargetType CardTarget = TargetType.AnyEnemy;
-    private const bool ShowInCardLibrary = true;
-
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new DamageVar(8, ValueProp.Move),
-        new CardsVar(2)
+        new DamageVar(9m, ValueProp.Move)
     ];
-    public ScrapyardIgnite() : base(BaseEnergyCost, CardKind, CardRarityValue, CardTarget, ShowInCardLibrary)
+
+    public ScrapyardShortCircuit() : base(6, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }
 
@@ -32,20 +25,20 @@ public sealed class ScrapyardIgnite : ScrapyardCard, IScrapyardInitiativeCard
     {
         ArgumentNullException.ThrowIfNull(cardPlay.Target);
 
-        if (ScrapyardKeywordState.WasInitiativeTriggered(this))
+        if (!ScrapyardKeywordState.WasInitiativeTriggered(this))
         {
-            await CardPileCmd.Draw(choiceContext, DynamicVars.Cards.IntValue, Owner);
+            return;
         }
 
         await DamageCmd.Attack(DynamicVars.Damage.BaseValue)
+            .WithHitCount(2)
             .FromCard(this, cardPlay)
             .Targeting(cardPlay.Target)
             .Execute(choiceContext);
-
     }
 
     protected override void OnUpgrade()
     {
-        DynamicVars.Cards.UpgradeValueBy(1);
+        DynamicVars.Damage.UpgradeValueBy(3m);
     }
 }

@@ -152,8 +152,8 @@ public static class ScrapyardKeywordState
 
         RefreshTurnState(owner);
         var cost = ScrapyardEnergySystem.GetEnergyCostToSpend(card);
-        return ScrapyardEnergySystem.CanSpend(owner, cost)
-            && ScrapyardEnergySystem.PreviewEnergyAfterSpend(owner, cost) == 1;
+        return ScrapyardEnergySystem.CanSpend(owner, card, cost)
+            && ScrapyardEnergySystem.PreviewEnergyAfterSpend(owner, card, cost) == 1;
     }
 
     private static bool AreCostsMultiples(int currentCost, int previousCost)

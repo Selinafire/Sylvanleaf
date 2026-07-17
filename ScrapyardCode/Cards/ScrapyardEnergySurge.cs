@@ -31,6 +31,7 @@ public sealed class ScrapyardEnergySurge : ModCardTemplate
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
         int multiplier = base.IsUpgraded ? 12 : 6;
+        ArgumentNullException.ThrowIfNull(base.Owner.PlayerCombatState);
         int currentEnergy = base.Owner.PlayerCombatState.Energy;
         
         // 翻倍：获得 (multiplier - 1) 倍当前能量

@@ -8,15 +8,15 @@ using STS2RitsuLib.Interop.AutoRegistration;
 namespace Scrapyard.Cards;
 
 [RegisterCard(typeof(ScrapyardCardPool))]
-public sealed class ScrapyardSourceOfFlame : ScrapyardCard
+public sealed class ScrapyardRareEnergy : ScrapyardCard
 {
-    public ScrapyardSourceOfFlame() : base(6, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public ScrapyardRareEnergy() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ScrapyardSourceOfFlamePower>(
+        await PowerCmd.Apply<ScrapyardRareEnergyPower>(
             choiceContext,
             Owner.Creature,
             1,
@@ -26,6 +26,6 @@ public sealed class ScrapyardSourceOfFlame : ScrapyardCard
 
     protected override void OnUpgrade()
     {
-        EnergyCost.UpgradeBy(-2);
+        EnergyCost.UpgradeBy(-1);
     }
 }

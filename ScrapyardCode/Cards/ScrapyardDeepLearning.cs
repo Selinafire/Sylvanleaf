@@ -16,11 +16,16 @@ public sealed class ScrapyardDeepLearning : ScrapyardCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ScrapyardDeepLearningPower>(
+        var power = await PowerCmd.Apply<ScrapyardDeepLearningPower>(
             choiceContext,
             Owner.Creature,
-            IsUpgraded ? 2 : 1,
+            1,
             Owner.Creature,
             this);
+
+        if (IsUpgraded)
+        {
+            power?.EnableRetainedSlimed();
+        }
     }
 }

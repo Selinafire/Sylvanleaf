@@ -14,12 +14,19 @@ namespace Scrapyard.ScrapyardCode.Powers;
 [RegisterPower]
 public class ScrapyardDeepLearningPower : ModPowerTemplate
 {
+    private bool _generatedSlimedRetain;
+
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: $"{Entry.ResPath}/images/powers/ScrapyardDeepLearningPower.png",
         BigIconPath: $"{Entry.ResPath}/images/powers/ScrapyardDeepLearningPowerBig.png");
+
+    public void EnableRetainedSlimed()
+    {
+        _generatedSlimedRetain = true;
+    }
 
     public override async Task BeforeHandDraw(Player player, PlayerChoiceContext choiceContext, ICombatState combatState)
     {
@@ -30,12 +37,15 @@ public class ScrapyardDeepLearningPower : ModPowerTemplate
 
         Flash();
 
-        var slimed = combatState.CreateCard<Slimed>(player);
-        if (Amount >= 2)
+        for (var i = 0; i < Amount; i++)
         {
-            CardCmd.ApplyKeyword(slimed, CardKeyword.Retain);
-        }
+            var slimed = combatState.CreateCard<Slimed>(player);
+            if (_generatedSlimedRetain)
+            {
+                CardCmd.ApplyKeyword(slimed, CardKeyword.Retain);
+            }
 
-        await CardPileCmd.AddGeneratedCardToCombat(slimed, PileType.Hand, player);
+            await CardPileCmd.AddGeneratedCardToCombat(slimed, PileType.Hand, player);
+        }
     }
 }

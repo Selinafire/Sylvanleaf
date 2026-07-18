@@ -83,7 +83,7 @@ public class ScrapyardInterferencePower : ModPowerTemplate
         {
             if (card.Owner == player && card.CombatState == combatState)
             {
-                await CardCmd.AutoPlay(choiceContext, card, null);
+                await CardCmd.AutoPlay(choiceContext, card.CreateDupe(player), null);
             }
         }
 

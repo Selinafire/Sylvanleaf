@@ -18,6 +18,8 @@ public sealed class ScrapyardLightningStrike : ScrapyardCard
         new DynamicVar("Electric", 1m)
     ];
 
+    protected override HashSet<CardTag> CanonicalTags => new() { CardTag.Strike };
+
     public ScrapyardLightningStrike() : base(4, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
     }

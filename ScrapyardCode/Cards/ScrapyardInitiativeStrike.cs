@@ -28,6 +28,8 @@ public sealed class ScrapyardInitiativeStrike : ScrapyardCard, IScrapyardInitiat
         new CardsVar(1)
     ];
 
+    protected override HashSet<CardTag> CanonicalTags => new() { CardTag.Strike };
+
     public ScrapyardInitiativeStrike() : base(BaseEnergyCost, CardKind, CardRarityValue, CardTarget, ShowInCardLibrary)
     {
     }

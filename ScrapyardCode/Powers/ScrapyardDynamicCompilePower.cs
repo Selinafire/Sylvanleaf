@@ -14,12 +14,23 @@ namespace Scrapyard.ScrapyardCode.Powers;
 [RegisterPower]
 public class ScrapyardDynamicCompilePower : ModPowerTemplate
 {
+    private int _initiativeDraw;
+    private int _followUpBlock;
+    private int _decisiveEnergy;
+
     public override PowerType Type => PowerType.Buff;
-    public override PowerStackType StackType => PowerStackType.Single;
+    public override PowerStackType StackType => PowerStackType.Counter;
 
     public override PowerAssetProfile AssetProfile => new(
         IconPath: $"{Entry.ResPath}/images/powers/ScrapyardDynamicCompilePower.png",
         BigIconPath: $"{Entry.ResPath}/images/powers/ScrapyardDynamicCompilePowerBig.png");
+
+    public void AddCompileInstance(bool upgraded)
+    {
+        _initiativeDraw += upgraded ? 2 : 1;
+        _followUpBlock += upgraded ? 7 : 5;
+        _decisiveEnergy += 1;
+    }
 
     public override async Task AfterCardPlayedLate(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
@@ -31,19 +42,23 @@ public class ScrapyardDynamicCompilePower : ModPowerTemplate
         if (ScrapyardKeywordState.WasInitiativeTriggered(cardPlay.Card))
         {
             Flash();
-            await CardPileCmd.Draw(choiceContext, Amount, Owner.Player);
+            await CardPileCmd.Draw(choiceContext, _initiativeDraw > 0 ? _initiativeDraw : Amount, Owner.Player);
         }
 
         if (ScrapyardKeywordState.WasFollowUpTriggered(cardPlay.Card))
         {
             Flash();
-            await CreatureCmd.GainBlock(Owner, Amount >= 2 ? 7m : 5m, ValueProp.Move, cardPlay);
+            await CreatureCmd.GainBlock(
+                Owner,
+                _followUpBlock > 0 ? _followUpBlock : 5m * Amount,
+                ValueProp.Move,
+                cardPlay);
         }
 
         if (ScrapyardKeywordState.WasDecisiveTriggered(cardPlay.Card))
         {
             Flash();
-            ScrapyardEnergySystem.GainAdditive(Owner.Player, 1);
+            ScrapyardEnergySystem.GainAdditive(Owner.Player, _decisiveEnergy > 0 ? _decisiveEnergy : Amount);
         }
     }
 }

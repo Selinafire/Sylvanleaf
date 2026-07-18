@@ -21,7 +21,7 @@ public sealed class ScrapyardBoost : ScrapyardCard, IScrapyardFollowUpCard
 
     public override bool GainsBlock => true;
 
-    public ScrapyardBoost() : base(2, CardType.Attack, CardRarity.Common, TargetType.Self)
+    public ScrapyardBoost() : base(2, CardType.Skill, CardRarity.Common, TargetType.Self)
     {
     }
 
@@ -63,6 +63,6 @@ public sealed class ScrapyardBoost : ScrapyardCard, IScrapyardFollowUpCard
 
     private static bool CanIncreaseCost(CardModel card)
     {
-        return !card.EnergyCost.CostsX && card.EnergyCost.GetWithModifiers(CostModifiers.None) >= 0;
+        return !card.EnergyCost.CostsX;
     }
 }

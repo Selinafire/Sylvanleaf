@@ -16,11 +16,12 @@ public sealed class ScrapyardDynamicCompile : ScrapyardCard
 
     protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
     {
-        await PowerCmd.Apply<ScrapyardDynamicCompilePower>(
+        var power = await PowerCmd.Apply<ScrapyardDynamicCompilePower>(
             choiceContext,
             Owner.Creature,
-            IsUpgraded ? 2 : 1,
+            1,
             Owner.Creature,
             this);
+        power?.AddCompileInstance(IsUpgraded);
     }
 }

@@ -1,4 +1,3 @@
-using MegaCrit.Sts2.Core.Entities.Relics;
 using Scrapyard.Characters;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -6,10 +5,9 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace Scrapyard.Relics;
 
 [RegisterRelic(typeof(ScrapyardRelicPool))]
-[RegisterCharacterStarterRelic(typeof(ScrapyardCharacter))]
-public sealed class ScrapyardRelic : ScrapyardElectricCoreRelic
+public sealed class ScrapyardPerfectCoreRelic : ScrapyardElectricCoreRelic
 {
-    protected override int TriggerCount => 1;
+    protected override int TriggerCount => 5;
 
     public override RelicAssetProfile AssetProfile => new(
         IconPath: $"{Entry.ResPath}/images/relics/{GetType().Name}.png",

@@ -17,5 +17,22 @@
     "SCRAPYARD_POWER_SCRAPYARD_RARE_ENERGY_POWER.title":  "Rare Energy",
     "SCRAPYARD_POWER_SCRAPYARD_RARE_ENERGY_POWER.description":  "If you have more than 1 Energy at end of turn, multiply your Energy by 35 next turn.",
     "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.title":  "Source of Flame",
-    "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.description":  "For this combat, double your maximum Energy."
+    "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.description":  "For this combat, double your maximum Energy.",
+    "SCRAPYARD_POWER_SCRAPYARD_NEXT_TURN_ENERGY_MULTIPLIER_POWER.title":  "Shining",
+    "SCRAPYARD_POWER_SCRAPYARD_NEXT_TURN_ENERGY_MULTIPLIER_POWER.description":  "At the start of your next turn, multiply your Energy by {PowerAmount}.",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.title":  "Deep Learning",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.description":  "At the start of your turn, add a Slimed to your hand.",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.smartDescription":  "At the start of your turn, add a Slimed to your hand.",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.title":  "Interference",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.description":  "Your next {Amount} played card(s) this turn will be played again at the start of your next turn.",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.smartDescription":  "Your next {Amount} played card(s) this turn will be played again at the start of your next turn.",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.title":  "Dynamic Compile",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.description":  "Cards that trigger Initiative, Follow-up, or Decisive grant matching extra effects.",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.smartDescription":  "Cards that trigger Initiative, Follow-up, or Decisive grant matching extra effects.",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.title":  "Waste to Treasure",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.description":  "Whenever you generate a Status card, gain {Amount} Electric Potential.",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.smartDescription":  "Whenever you generate a Status card, gain {Amount} Electric Potential.",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.title":  "Arc Light",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.description":  "Whenever your energy becomes a multiple of 2, gain {Amount} Block.",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "Whenever your energy becomes a multiple of 2, gain {Amount} Block."
 }

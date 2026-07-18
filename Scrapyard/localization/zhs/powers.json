@@ -17,5 +17,22 @@
     "SCRAPYARD_POWER_SCRAPYARD_RARE_ENERGY_POWER.title":  "稀有能量",
     "SCRAPYARD_POWER_SCRAPYARD_RARE_ENERGY_POWER.description":  "如果回合结束时费用大于 1，下回合费用翻 35 倍。",
     "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.title":  "薪火之源",
-    "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.description":  "本场战斗中，你的能量上限翻倍。"
+    "SCRAPYARD_POWER_SCRAPYARD_SOURCE_OF_FLAME_POWER.description":  "本场战斗中，你的能量上限翻倍。",
+    "SCRAPYARD_POWER_SCRAPYARD_NEXT_TURN_ENERGY_MULTIPLIER_POWER.title":  "明耀",
+    "SCRAPYARD_POWER_SCRAPYARD_NEXT_TURN_ENERGY_MULTIPLIER_POWER.description":  "下回合开始时，费用翻 {PowerAmount} 倍。",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.title":  "深度学习",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.description":  "你的回合开始时，将一张粘液加入你的手牌。",
+    "SCRAPYARD_POWER_SCRAPYARD_DEEP_LEARNING_POWER.smartDescription":  "你的回合开始时，将一张粘液加入你的手牌。",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.title":  "干涉",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.description":  "本回合下 {Amount} 张打出的牌会在下回合开始时再打出一次。",
+    "SCRAPYARD_POWER_SCRAPYARD_INTERFERENCE_POWER.smartDescription":  "本回合下 {Amount} 张打出的牌会在下回合开始时再打出一次。",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.title":  "动态编译",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.description":  "打出触发先制、跟进或决胜的牌时，获得对应额外效果。",
+    "SCRAPYARD_POWER_SCRAPYARD_DYNAMIC_COMPILE_POWER.smartDescription":  "打出触发先制、跟进或决胜的牌时，获得对应额外效果。",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.title":  "化废为宝",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.description":  "每生成一张状态牌，获得 {Amount} 层电势。",
+    "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.smartDescription":  "每生成一张状态牌，获得 {Amount} 层电势。",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.title":  "弧光",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.description":  "每当你的费用变成 2 的倍数时，获得 {Amount} 点格挡。",
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "每当你的费用变成 2 的倍数时，获得 {Amount} 点格挡。"
 }

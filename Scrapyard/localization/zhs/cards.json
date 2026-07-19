@@ -65,6 +65,7 @@
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.title":  "嬗变",
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.description":  "打出时获得抽牌堆中 {Cards:diff()} 张牌的复制品。",
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.smartDescription":  "打出时获得抽牌堆中 {Cards:diff()} 张牌的复制品。",
+    "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.selectionScreenPrompt":  "选择抽牌堆中的牌，获得其复制品。",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.title":  "互感",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.description":  "敌人之间的电势差也会造成伤害。",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.smartDescription":  "敌人之间的电势差也会造成伤害。",

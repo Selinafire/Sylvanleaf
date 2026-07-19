@@ -65,6 +65,7 @@
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.title":  "Transmutation",
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.description":  "When played, gain copies of {Cards:diff()} card(s) from your draw pile.",
     "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.smartDescription":  "When played, gain copies of {Cards:diff()} card(s) from your draw pile.",
+    "SCRAPYARD_CARD_SCRAPYARD_TRANSMUTATION.selectionScreenPrompt":  "Choose card(s) from your draw pile to copy.",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.title":  "Mutual Induction",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.description":  "Electric Potential differences between enemies also deal damage.",
     "SCRAPYARD_CARD_SCRAPYARD_MUTUAL_INDUCTION.smartDescription":  "Electric Potential differences between enemies also deal damage.",

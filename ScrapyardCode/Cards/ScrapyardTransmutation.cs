@@ -27,7 +27,7 @@ public sealed class ScrapyardTransmutation : ScrapyardCard
             Owner,
             new CardSelectorPrefs(SelectionScreenPrompt, DynamicVars.Cards.IntValue));
 
-        var copies = selectedCards.Select(card => card.CreateDupe(Owner)).ToList();
+        var copies = selectedCards.Select(card => card.CreateClone()).ToList();
         await CardPileCmd.AddGeneratedCardsToCombat(copies, PileType.Hand, Owner);
     }
 
@@ -35,4 +35,5 @@ public sealed class ScrapyardTransmutation : ScrapyardCard
     {
         DynamicVars.Cards.UpgradeValueBy(1m);
     }
+
 }

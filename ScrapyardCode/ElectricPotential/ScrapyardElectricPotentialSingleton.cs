@@ -60,48 +60,54 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
     {
         if (side != CombatSide.Enemy) return;
 
-        var player = combatState.GetCreaturesOnSide(CombatSide.Player).FirstOrDefault(c => c.IsAlive);
-        if (player == null) return;
-
-        int playerAmount = player.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
+        var players = combatState.GetCreaturesOnSide(CombatSide.Player).Where(c => c.IsAlive).ToList();
+        if (players.Count == 0) return;
 
         var enemies = combatState.GetCreaturesOnSide(CombatSide.Enemy).Where(e => e.IsAlive).ToList();
 
-        foreach (var enemy in enemies)
+        // 每个玩家与每个敌人比较电势
+        foreach (var player in players)
         {
-            int enemyAmount = enemy.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
+            int playerAmount = player.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
 
-            if (playerAmount > enemyAmount)
+            foreach (var enemy in enemies)
             {
-                _isPotentialDamage = true;
-                await CreatureCmd.Damage(
-                    new ThrowingPlayerChoiceContext(),
-                    new[] { enemy },
-                    playerAmount - enemyAmount,
-                    ValueProp.Unpowered,
-                    null,
-                    null,
-                    null
-                );
-                _isPotentialDamage = false;
-            }
-            else if (enemyAmount > playerAmount)
-            {
-                _isPotentialDamage = true;
-                await CreatureCmd.Damage(
-                    new ThrowingPlayerChoiceContext(),
-                    new[] { player },
-                    enemyAmount - playerAmount,
-                    ValueProp.Unpowered,
-                    null,
-                    null,
-                    null
-                );
-                _isPotentialDamage = false;
+                int enemyAmount = enemy.GetPower<ScrapyardElectricPotentialPower>()?.Amount ?? 0;
+
+                if (playerAmount > enemyAmount)
+                {
+                    _isPotentialDamage = true;
+                    await CreatureCmd.Damage(
+                        new ThrowingPlayerChoiceContext(),
+                        new[] { enemy },
+                        playerAmount - enemyAmount,
+                        ValueProp.Unpowered,
+                        null,
+                        null,
+                        null
+                    );
+                    _isPotentialDamage = false;
+                }
+                else if (enemyAmount > playerAmount)
+                {
+                    _isPotentialDamage = true;
+                    await CreatureCmd.Damage(
+                        new ThrowingPlayerChoiceContext(),
+                        new[] { player },
+                        enemyAmount - playerAmount,
+                        ValueProp.Unpowered,
+                        null,
+                        null,
+                        null
+                    );
+                    _isPotentialDamage = false;
+                }
             }
         }
 
-        if (player.GetPower<ScrapyardMutualInductionPower>() is null)
+        // 任意玩家拥有互感时，敌人之间也比较电势
+        bool anyPlayerHasMutualInduction = players.Any(p => p.GetPower<ScrapyardMutualInductionPower>() is not null);
+        if (!anyPlayerHasMutualInduction)
         {
             return;
         }

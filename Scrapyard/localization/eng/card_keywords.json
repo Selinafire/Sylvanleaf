@@ -4,5 +4,5 @@
   "SCRAPYARD_KEYWORD_FOLLOW_UP.title": "Follow-Up",
   "SCRAPYARD_KEYWORD_FOLLOW_UP.description": "Triggers its Follow-Up effect if this card's cost and the previously played card's cost are multiples of each other.",
   "SCRAPYARD_KEYWORD_DECISIVE.title": "Decisive",
-  "SCRAPYARD_KEYWORD_DECISIVE.description": "You can play this card while your Energy is 1, and its Decisive effect triggers."
+  "SCRAPYARD_KEYWORD_DECISIVE.description": "Triggers its Decisive effect if this card has the highest cost in your hand."
 }

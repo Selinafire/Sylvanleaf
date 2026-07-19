@@ -4,5 +4,5 @@
   "SCRAPYARD_KEYWORD_FOLLOW_UP.title": "跟进",
   "SCRAPYARD_KEYWORD_FOLLOW_UP.description": "如果这张牌和上一张打出的牌费用互为倍数，触发跟进效果。",
   "SCRAPYARD_KEYWORD_DECISIVE.title": "决胜",
-  "SCRAPYARD_KEYWORD_DECISIVE.description": "你的费用为 1 时，可以打出这张牌，并触发决胜效果。"
+  "SCRAPYARD_KEYWORD_DECISIVE.description": "如果这张牌是手牌中费用最高的牌，触发决胜效果。"
 }

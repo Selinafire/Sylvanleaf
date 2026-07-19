@@ -1,8 +1,8 @@
 {
   "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "缺陷核心",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "战斗开始时，给予随机敌人 [blue]-3[/blue] 层[gold]电势[/gold]。",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "一枚仍在向外泄露负电势的核心。",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "战斗开始时，获得 [blue]6[/blue] 层[gold]电势[/gold]。",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "一枚仍在向外泄露电势的核心。",
   "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.title": "完美核心",
-  "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.description": "战斗开始时，给予随机敌人 [blue]-3[/blue] 层[gold]电势[/gold]，重复 [blue]5[/blue] 次。",
+  "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.description": "战斗开始时，获得 [blue]12[/blue] 层[gold]电势[/gold]。",
   "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.flavor": "它的缺陷被完整保留下来，因此更加稳定。"
 }

@@ -11,18 +11,13 @@ namespace Scrapyard.Relics;
 
 public abstract class ScrapyardElectricCoreRelic : ModRelicTemplate
 {
-    private const string TriggerCountKey = "TriggerCount";
-
-    protected abstract int TriggerCount { get; }
-
-    protected virtual decimal ElectricPotentialAmount => -3m;
+    protected abstract decimal ElectricPotentialAmount { get; }
 
     public override RelicRarity Rarity => RelicRarity.Starter;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<ScrapyardElectricPotentialPower>(ElectricPotentialAmount),
-        new DynamicVar(TriggerCountKey, TriggerCount)
+        new PowerVar<ScrapyardElectricPotentialPower>(ElectricPotentialAmount)
     ];
 
     public override async Task BeforeSideTurnStart(
@@ -38,21 +33,12 @@ public abstract class ScrapyardElectricCoreRelic : ModRelicTemplate
             return;
         }
 
-        for (var i = 0; i < TriggerCount; i++)
-        {
-            var target = Owner.RunState.Rng.CombatTargets.NextItem(combatState.HittableEnemies);
-            if (target is null)
-            {
-                return;
-            }
-
-            Flash();
-            await ScrapyardElectricPotentialHelper.ApplyDelta(
-                choiceContext,
-                target,
-                ElectricPotentialAmount,
-                Owner.Creature,
-                null);
-        }
+        Flash();
+        await ScrapyardElectricPotentialHelper.ApplyDelta(
+            choiceContext,
+            Owner.Creature,
+            ElectricPotentialAmount,
+            Owner.Creature,
+            null);
     }
 }

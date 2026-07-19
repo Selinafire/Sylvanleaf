@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Models;
 using Scrapyard.Energy;
@@ -36,13 +37,13 @@ public static class ScrapyardKeywordState
         ResetTurn(player);
     }
 
-    public static void RecordPlayedCard(Player player, CardModel card, int cost, int finalEnergy)
+    public static void RecordPlayedCard(Player player, CardModel card, int cost)
     {
         RefreshTurnState(player);
 
         WasInitiativeCard[card] = CardsPlayedThisTurn.GetValueOrDefault(player) == 0;
         WasFollowUpCard[card] = IsFollowUpPending(card);
-        WasDecisiveCard[card] = card is IScrapyardDecisiveCard && finalEnergy == 1;
+        WasDecisiveCard[card] = IsDecisivePending(card);
         CardsPlayedThisTurn[player] = CardsPlayedThisTurn.GetValueOrDefault(player) + 1;
         PlayedCardCosts.GetValueOrDefault(player)?.Add(cost);
         PreviousCardCosts[player] = cost;
@@ -151,9 +152,29 @@ public static class ScrapyardKeywordState
         }
 
         RefreshTurnState(owner);
-        var cost = ScrapyardEnergySystem.GetEnergyCostToSpend(card);
-        return ScrapyardEnergySystem.CanSpend(owner, cost)
-            && ScrapyardEnergySystem.PreviewEnergyAfterSpend(owner, cost) == 1;
+        return IsHighestCostInHand(card, owner);
+    }
+
+    private static bool IsHighestCostInHand(CardModel card, Player owner)
+    {
+        var handCards = PileType.Hand.GetPile(owner)?.Cards;
+        if (handCards is null)
+        {
+            return false;
+        }
+
+        var currentCost = ScrapyardEnergySystem.GetEnergyCostToSpend(card);
+        var maxCost = currentCost;
+        foreach (var handCard in handCards)
+        {
+            var handCost = ScrapyardEnergySystem.GetEnergyCostToSpend(handCard);
+            if (handCost > maxCost)
+            {
+                maxCost = handCost;
+            }
+        }
+
+        return currentCost >= maxCost;
     }
 
     private static bool AreCostsMultiples(int currentCost, int previousCost)

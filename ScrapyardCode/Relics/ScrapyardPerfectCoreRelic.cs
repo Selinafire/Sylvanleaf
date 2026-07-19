@@ -7,7 +7,7 @@ namespace Scrapyard.Relics;
 [RegisterRelic(typeof(ScrapyardRelicPool))]
 public sealed class ScrapyardPerfectCoreRelic : ScrapyardElectricCoreRelic
 {
-    protected override int TriggerCount => 5;
+    protected override decimal ElectricPotentialAmount => 12m;
 
     public override RelicAssetProfile AssetProfile => new(
         IconPath: $"{Entry.ResPath}/images/relics/{GetType().Name}.png",

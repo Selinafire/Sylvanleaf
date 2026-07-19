@@ -1,8 +1,8 @@
 {
   "SCRAPYARD_RELIC_SCRAPYARD_RELIC.title": "Defective Core",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "At the start of combat, apply [blue]-3[/blue] [gold]Electric Potential[/gold] to a random enemy.",
-  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "A core still leaking negative potential.",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.description": "At the start of combat, gain [blue]6[/blue] [gold]Electric Potential[/gold].",
+  "SCRAPYARD_RELIC_SCRAPYARD_RELIC.flavor": "A core still leaking potential.",
   "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.title": "Perfect Core",
-  "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.description": "At the start of combat, apply [blue]-3[/blue] [gold]Electric Potential[/gold] to a random enemy [blue]5[/blue] times.",
+  "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.description": "At the start of combat, gain [blue]12[/blue] [gold]Electric Potential[/gold].",
   "SCRAPYARD_RELIC_SCRAPYARD_PERFECT_CORE_RELIC.flavor": "Its defect was preserved perfectly, and is therefore more stable."
 }

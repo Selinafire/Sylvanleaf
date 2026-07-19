@@ -138,7 +138,7 @@ public static class ScrapyardEnergySystem
             card.EnergyCost.CapturedXValue = Math.Max(0, before);
         }
 
-        ScrapyardKeywordState.RecordPlayedCard(player, card, cost, after);
+        ScrapyardKeywordState.RecordPlayedCard(player, card, cost);
         combatState.Energy = after;
         return Math.Max(0, before - after);
     }

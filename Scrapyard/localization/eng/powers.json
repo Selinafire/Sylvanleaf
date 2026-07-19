@@ -35,5 +35,11 @@
     "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.smartDescription":  "Whenever you generate a Status card, gain {Amount} Electric Potential.",
     "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.title":  "Arc Light",
     "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.description":  "Whenever your energy becomes a multiple of 2, gain {Amount} Block.",
-    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "Whenever your energy becomes a multiple of 2, gain {Amount} Block."
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "Whenever your energy becomes a multiple of 2, gain {Amount} Block.",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.title":  "Sign Off",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.description":  "Whenever the sign of your Energy flips, draw {Amount} card(s).",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.smartDescription":  "Whenever the sign of your Energy flips, draw {Amount} card(s).",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.title":  "Evolution",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.description":  "Whenever you draw a Status card, draw {Amount} additional card(s).",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.smartDescription":  "Whenever you draw a Status card, draw {Amount} additional card(s)."
 }

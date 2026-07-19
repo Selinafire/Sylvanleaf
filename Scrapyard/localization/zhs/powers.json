@@ -35,5 +35,11 @@
     "SCRAPYARD_POWER_SCRAPYARD_WASTE_TO_TREASURE_POWER.smartDescription":  "每生成一张状态牌，获得 {Amount} 层电势。",
     "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.title":  "弧光",
     "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.description":  "每当你的费用变成 2 的倍数时，获得 {Amount} 点格挡。",
-    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "每当你的费用变成 2 的倍数时，获得 {Amount} 点格挡。"
+    "SCRAPYARD_POWER_SCRAPYARD_ARC_LIGHT_POWER.smartDescription":  "每当你的费用变成 2 的倍数时，获得 {Amount} 点格挡。",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.title":  "我先下班",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.description":  "你费用的正负符号发生改变时，抽 {Amount} 张牌。",
+    "SCRAPYARD_POWER_SCRAPYARD_SIGN_OFF_POWER.smartDescription":  "你费用的正负符号发生改变时，抽 {Amount} 张牌。",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.title":  "进化",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.description":  "你抽到状态牌时，额外抽 {Amount} 张牌。",
+    "SCRAPYARD_POWER_SCRAPYARD_EVOLUTION_POWER.smartDescription":  "你抽到状态牌时，额外抽 {Amount} 张牌。"
 }

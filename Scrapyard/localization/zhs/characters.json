@@ -1,7 +1,7 @@
 {
   "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.aromaPrinciple": "[sine][blue]压力核心用因数计数。[/blue][/sine]",
   "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.banter.alive.endTurnPing": "回合结束。",
-  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.banter.dead.endTurnPing": "我先撤退。",
+  "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.banter.dead.endTurnPing": "- .. -- .   .-.. .. -- .. -\n. -..- -.-. . . -.. . -..",
   "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.cardsModifierDescription": "缺陷机器人的卡牌现在会出现在奖励和商店中。",
   "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.cardsModifierTitle": "缺陷机器人卡牌",
   "SCRAPYARD_CHARACTER_SCRAPYARD_CHARACTER.description": "拥有 12 点能量的角色，卡牌通常在打出时按费用整除能量。",

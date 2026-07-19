@@ -24,6 +24,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
     }
 
     // ── 受伤降电势 ──
+    private static bool _isPotentialDamage;
 
     public override async Task AfterDamageGiven(
         PlayerChoiceContext choiceContext,
@@ -33,7 +34,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
         Creature target,
         CardModel? cardSource)
     {
-        if (!target.IsAlive) return;
+        if (_isPotentialDamage || !target.IsAlive) return;
 
         var power = target.GetPower<ScrapyardElectricPotentialPower>();
         if (power == null) return;
@@ -72,6 +73,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
 
             if (playerAmount > enemyAmount)
             {
+                _isPotentialDamage = true;
                 await CreatureCmd.Damage(
                     new ThrowingPlayerChoiceContext(),
                     new[] { enemy },
@@ -81,9 +83,11 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
                     null,
                     null
                 );
+                _isPotentialDamage = false;
             }
             else if (enemyAmount > playerAmount)
             {
+                _isPotentialDamage = true;
                 await CreatureCmd.Damage(
                     new ThrowingPlayerChoiceContext(),
                     new[] { player },
@@ -93,6 +97,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
                     null,
                     null
                 );
+                _isPotentialDamage = false;
             }
         }
 
@@ -123,6 +128,7 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
         var target = firstAmount < secondAmount ? first : second;
         var damage = Math.Abs(firstAmount - secondAmount);
 
+        _isPotentialDamage = true;
         await CreatureCmd.Damage(
             new ThrowingPlayerChoiceContext(),
             new[] { target },
@@ -132,5 +138,6 @@ public class ScrapyardElectricPotentialSingleton : HookedSingletonModel
             null,
             null
         );
+        _isPotentialDamage = false;
     }
 }
